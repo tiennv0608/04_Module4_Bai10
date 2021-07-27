@@ -1,18 +1,18 @@
-com/codegym/AppInitializer.java
- com.codegym.AppInitializer
 com/codegym/repository/IProductRepository.java
  com.codegym.repository.IProductRepository
+com/codegym/AppInitializer.java
+ com.codegym.AppInitializer
 com/codegym/service/ProductService.java
  com.codegym.service.ProductService
 com/codegym/service/IProductService.java
  com.codegym.service.IProductService
-com/codegym/model/Cart.java
- com.codegym.model.Cart
 com/codegym/AppConfiguration.java
  com.codegym.AppConfiguration
-com/codegym/controller/ProductController.java
- com.codegym.controller.ProductController
 com/codegym/model/Product.java
  com.codegym.model.Product
+com/codegym/controller/ProductController.java
+ com.codegym.controller.ProductController
+com/codegym/model/Cart.java
+ com.codegym.model.Cart
 com/codegym/controller/ShoppingCartController.java
  com.codegym.controller.ShoppingCartController

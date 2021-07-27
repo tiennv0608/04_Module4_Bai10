@@ -1,7 +1,5 @@
 package com.codegym.model;
 
-import org.springframework.web.bind.annotation.GetMapping;
-
 import javax.persistence.*;
 
 @Entity
@@ -13,14 +11,16 @@ public class Product {
     private String name;
     private double price;
     private String description;
+    private String image;
 
     public Product() {
     }
 
-    public Product(String name, double price, String description) {
+    public Product(String name, double price, String description, String image) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.image = image;
     }
 
     public Long getId() {
@@ -53,5 +53,13 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

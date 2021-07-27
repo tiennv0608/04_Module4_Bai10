@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="UTF-8">
-  <title>Shop</title>
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Shop</title>
+
 </head>
 <body>
-<p>
-  <a href="/shopping-cart">Your cart</a>
-</p>
-<table border="1">
-  <tr>
-    <td>Name</td>
-    <td>Price</td>
-    <td>Add To Cart</td>
-  </tr>
-  <th:block th:each="product:${products}">
-    <tr>
-      <td th:text="${product.name}"></td>
-      <td th:text="${product.price}"></td>
-      <td><a th:href="@{/add/__${product.id}__?action='list'}">Add To Cart</a></td>
-    </tr>
-  </th:block>
-</table>
+<div class="container">
+    <div th:replace="/layout :: top"></div>
+    <div th:replace="/layout :: menu"></div>
+    <div class="row">
+        <div th:replace="/layout :: left"></div>
+        <div class="col-7">
+            <div class="row">
+                <div class="col-4 text-center" th:each="product: ${products}">
+                    <div class="card" style="width: 18rem;">
+                        <img th:src="@{'/image/'+${product.image}}" class="card-img-top" alt="..."
+                             style="height: 300px; width: 300px; align-items: center">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${product.name}"></h5>
+                            <!--                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                            <a th:href="@{/view/__${product.id}__}" class="btn btn-primary"
+                               th:text="${product.price}"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div th:replace="/layout :: right"></div>
+    </div>
+    <div th:replace="/layout :: footer"></div>
+</div>
+
 </body>
 </html>
